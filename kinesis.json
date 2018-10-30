@@ -1,0 +1,52 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+  "Parameters": {
+    "StreamName": {
+            "Description": "Kinesis Stream Name",
+            "Type": "String",
+            "Default": "StreamName1"
+        },
+    "RetentionPeriodInHours": {
+            "Description": "Kinesis data retention period in hours, maximum value is 168",
+            "Type": "Number",
+            "Default": "168"
+        },
+    "KinesisShardCount": {
+            "Description": "Kinesis Shard Count",
+            "Type": "Number",
+            "Default": "1"
+        },
+	"StreamTagKey": {
+            "Description": "Kinesis Stream Tag Name",
+            "Type": "String",
+            "Default": "Environment"
+        },
+	"StreamTagValue": {
+            "Description": "Kinesis Stream Value Name",
+            "Type": "String",
+            "Default": "Dev"
+        }
+  },
+  "Resources" : {
+    "KinesisStream" : {
+      "Type" : "AWS::Kinesis::Stream",
+      "Properties" : {
+	    "Name": {
+                    "Ref": "StreamName"
+                },
+        "RetentionPeriodHours" : {
+                    "Ref": "RetentionPeriodInHours"
+                },
+        "ShardCount": {
+                    "Ref": "KinesisShardCount"
+                },
+        "Tags": [
+                {
+                  "Key": "Environment",
+                  "Value": "Production"
+                }
+          ]     
+      }
+    }
+  }
+}

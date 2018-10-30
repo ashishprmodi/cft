@@ -1,0 +1,22 @@
+[
+  {
+    "ParameterKey": "StreamName",
+    "ParameterValue": "StreamName1"
+  }, 
+  {
+    "ParameterKey": "RetentionPeriodInHours",
+    "ParameterValue": "168"
+  }, 
+  {
+    "ParameterKey": "KinesisShardCount",
+    "ParameterValue": "1"
+  }, 
+  {
+    "ParameterKey": "StreamTagKey",
+    "ParameterValue": "Environment"
+  }, 
+  {
+    "ParameterKey": "StreamTagValue",
+    "ParameterValue": "Dev"
+  }
+]
