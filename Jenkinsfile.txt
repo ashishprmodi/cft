@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-				python cf_create_or_update.py  "test" "kinesis.json" "parameter.json"
+		
+				
             }
         }
         stage('Test') {
